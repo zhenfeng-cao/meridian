@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian — Live in tune with your body's natural rhythm</title>
+<meta name="description" content="Meridian is the 2,000-year-old circadian clock from the Huangdi Neijing — your body's built-in daily schedule, on your phone. No account, no cloud, no subscription.">
+<style>
+  :root{
+    --bg:#FDF8F0; --bg2:#F7F0E3; --card:#FFFFFF;
+    --ink:#2C2417; --ink2:#6B5E4D; --gold:#B8860B; --gold2:#DAA520;
+    --green:#4A7C59; --red:#A04A3A; --border:#E8DDD0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Noto Sans SC",sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:Georgia,"Noto Serif SC","Songti SC",serif;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+  section{padding:64px 0;}
+
+  header{padding:20px 0; border-bottom:1px solid var(--border);}
+  .brand{display:flex; align-items:baseline; gap:10px;}
+  .brand .name{font-size:20px; font-weight:700; letter-spacing:1px;}
+  .brand .sub{font-size:12px; color:var(--ink2); letter-spacing:3px; text-transform:uppercase;}
+
+  .hero{padding:72px 0 48px; text-align:center;}
+  .hero h1{font-size:40px; line-height:1.15; font-weight:700; margin:0 auto 16px; max-width:600px;}
+  .hero p.lead{font-size:18px; color:var(--ink2); max-width:560px; margin:0 auto 28px;}
+  .badge{display:inline-block; font-size:13px; color:var(--green); border:1px solid var(--green);
+    padding:6px 16px; border-radius:999px; letter-spacing:.5px; margin-bottom:20px;}
+  .cta{display:inline-block; background:var(--gold); color:#fff; text-decoration:none;
+    padding:14px 36px; border-radius:12px; font-weight:600; font-size:16px; letter-spacing:.3px;}
+  .cta:hover{background:var(--gold2);}
+  .cta-note{font-size:12px; color:var(--ink2); margin-top:12px;}
+
+  /* 12-hour color band */
+  .band{display:flex; gap:3px; margin:40px auto 0; max-width:560px; height:10px; border-radius:6px; overflow:hidden;}
+  .band span{flex:1; display:block;}
+
+  h2{font-size:26px; font-weight:700; margin-bottom:20px; text-align:center;}
+  .lede{text-align:center; color:var(--ink2); max-width:600px; margin:0 auto 40px; font-size:16px;}
+
+  .pillars{display:grid; gap:20px;}
+  .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:28px;}
+  .card h3{font-size:18px; font-weight:700; margin-bottom:10px;}
+  .card h3 .n{color:var(--gold); font-weight:700; margin-right:8px;}
+  .card p{color:var(--ink2); font-size:15px;}
+
+  ul.features{list-style:none; display:grid; gap:14px; max-width:560px; margin:0 auto;}
+  ul.features li{padding-left:28px; position:relative; font-size:16px;}
+  ul.features li::before{content:""; position:absolute; left:0; top:8px; width:14px; height:14px;
+    border-radius:4px; background:var(--gold);}
+
+  .pricing{text-align:center; background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .price{font-size:48px; font-weight:700; line-height:1; margin:8px 0;}
+  .price .cur{font-size:24px; vertical-align:top;}
+  .pricing .once{color:var(--ink2); margin-bottom:8px;}
+  .promises{display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-top:20px; color:var(--ink2); font-size:14px;}
+  .promises span{white-space:nowrap;}
+
+  footer{border-top:1px solid var(--border); padding:32px 0; color:var(--ink2); font-size:13px;}
+  footer .row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer a{color:var(--ink2); text-decoration:none; margin-left:18px;}
+  footer a:hover{color:var(--gold);}
+
+  @media(max-width:560px){
+    .hero h1{font-size:32px;}
+    .promises{flex-direction:column; gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <span class="name serif">Meridian</span>
+    <span class="sub">子午</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">One-time purchase · No subscription</span>
+    <h1 class="serif">Live in tune with your body's natural rhythm.</h1>
+    <p class="lead">Meridian is the 2,000-year-old circadian clock from the Huangdi Neijing — your body's built-in daily schedule, on your phone.</p>
+    <a class="cta" href="#">Coming to the App Store</a>
+    <p class="cta-note">No account · No cloud · No ads · Your data never leaves your phone</p>
+    <div class="band" aria-hidden="true">
+      <span style="background:#2C3E6B"></span><span style="background:#3A2C5E"></span><span style="background:#2A4A5E"></span>
+      <span style="background:#4A7C59"></span><span style="background:#C49030"></span><span style="background:#B8860B"></span>
+      <span style="background:#C04030"></span><span style="background:#A06030"></span><span style="background:#3A8A8A"></span>
+      <span style="background:#4A6FA5"></span><span style="background:#7C5C8A"></span><span style="background:#5A4A7A"></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="serif">Your body already has a schedule</h2>
+    <p class="lede">子午流注 (zi wu liu zhu) divides the day into twelve two-hour "hours", each governed by a different organ system. Traditional Chinese medicine has timed sleep, meals, work and rest by it for two millennia. Modern science now calls the same idea <em>circadian rhythm</em> — and won a Nobel Prize for it in 2017.</p>
+    <div class="pillars">
+      <div class="card">
+        <h3><span class="n">1</span>Your body's natural schedule</h3>
+        <p>Twelve two-hour windows, each with clear "good for" and "avoid" guidance. Know the best time to sleep, focus, eat, exercise and wind down — instead of guessing.</p>
+      </div>
+      <div class="card">
+        <h3><span class="n">2</span>Private by design</h3>
+        <p>No account. No cloud. No tracking. No ads. Your plans and check-ins never leave your phone.</p>
+      </div>
+      <div class="card">
+        <h3><span class="n">3</span>Ancient wisdom, modern habits</h3>
+        <p>Daily check-ins, a compliance dashboard and a shareable schedule poster — a two-thousand-year-old framework wrapped in modern tooling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <h2 class="serif">What's inside</h2>
+    <ul class="features">
+      <li><strong>The Twelve Hours</strong> — meridian-by-meridian guidance for every two-hour window.</li>
+      <li><strong>Reminders, your way</strong> — voice, ring, vibrate or silent, set per hour.</li>
+      <li><strong>Check-ins &amp; dashboard</strong> — track your 7 / 14 / 30-day rhythm.</li>
+      <li><strong>Shareable poster</strong> — your personalized schedule, in one tap.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <h2 class="serif">Pay once. Own it.</h2>
+    <div class="price"><span class="cur">$</span>2.99</div>
+    <div class="once">one-time · launch price</div>
+    <div class="promises">
+      <span>No subscription</span><span>No ads</span><span>No account</span><span>No data collection</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <span>© 2026 StellarSea</span>
+    <span>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
