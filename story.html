@@ -46,7 +46,7 @@
 <header>
   <div class="wrap row">
     <a class="brand serif" href="/">Meridian · 子午</a>
-    <button class="lang-btn" onclick="toggleLang()">中文 / EN</button>
+    <button class="lang-btn" id="lang-btn" onclick="toggleLang()">中文</button>
   </div>
 </header>
 
@@ -165,10 +165,16 @@
     document.documentElement.lang = showZh?'zh':'en';
     document.title = showZh ? '痴迷开发到忘了睡觉——Meridian' : 'I was so obsessed with building apps I forgot to sleep — Meridian';
     document.getElementById('cta-text').textContent = showZh ? '你的身体早已有自己的作息表。Meridian 帮你看见它。' : 'Your body already has a schedule. Meridian shows it to you.';
+    try{ localStorage.setItem('lang', showZh?'zh':'en'); }catch(e){}
+    var btn=document.getElementById('lang-btn'); if(btn) btn.textContent = showZh ? 'English' : '中文';
     try{ if(history.replaceState){ var u=new URL(location); u.searchParams.set('lang',showZh?'zh':'en'); history.replaceState(null,'',u);} }catch(e){}
   }
   (function(){
-    try{ if(new URL(location).searchParams.get('lang')==='zh') toggleLang(); }catch(e){}
+    try{
+      var p=new URL(location).searchParams.get('lang');
+      var s=null; try{s=localStorage.getItem('lang');}catch(e){}
+      if(p==='zh'||(p===null&&(s==='zh'||(navigator.language||'').toLowerCase().indexOf('zh')===0))) toggleLang();
+    }catch(e){}
   })();
 </script>
 
