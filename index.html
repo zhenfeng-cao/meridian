@@ -53,6 +53,45 @@
   ul.features li{padding-left:28px;position:relative;font-size:16px;}
   ul.features li::before{content:"";position:absolute;left:0;top:8px;width:14px;height:14px;border-radius:4px;background:var(--gold);}
 
+  /* 功能图文卡片 */
+  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:760px;margin:0 auto;}
+  .feat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px 24px 28px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.05);}
+  .feat-card .visual{height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .feat-card h3{font-size:18px;font-weight:700;margin-bottom:8px;}
+  .feat-card p{color:var(--ink2);font-size:14px;line-height:1.6;}
+
+  /* 时辰圆盘 */
+  .dial{width:124px;height:124px;border-radius:50%;position:relative;border:2px solid var(--gold);box-shadow:0 8px 24px rgba(0,0,0,.14);background:conic-gradient(#2C3E6B 0deg 30deg,#3A2C5E 30deg 60deg,#2A4A5E 60deg 90deg,#4A7C59 90deg 120deg,#C49030 120deg 150deg,#B8860B 150deg 180deg,#C04030 180deg 210deg,#A06030 210deg 240deg,#3A8A8A 240deg 270deg,#4A6FA5 270deg 300deg,#7C5C8A 300deg 330deg,#5A4A7A 330deg 360deg);}
+  .dial::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:#FDF8F0;box-shadow:0 0 0 1px var(--border);}
+  .dial::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;background:var(--gold);}
+
+  /* 语音卡 */
+  .voice-mini{width:150px;padding:22px 16px;border-radius:18px;background:linear-gradient(135deg,#C49030,#E0B050);box-shadow:0 8px 24px rgba(0,0,0,.16);display:flex;flex-direction:column;align-items:center;gap:14px;}
+  .voice-mini .waves{width:52px;height:34px;}
+  .voice-mini .tags{display:flex;gap:10px;}
+  .voice-mini .tag{padding:3px 14px;border-radius:999px;font-size:12px;color:#fff;font-weight:700;}
+  .voice-mini .tag.good{background:rgba(74,124,89,.95);}
+  .voice-mini .tag.avoid{background:rgba(160,74,58,.95);}
+
+  /* 计划卡 */
+  .plan-mini{width:170px;padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.08);text-align:left;}
+  .plan-mini .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:13px;font-weight:700;}
+  .plan-mini .badge{background:var(--green);color:#fff;padding:2px 10px;border-radius:999px;font-size:11px;font-weight:600;}
+  .plan-mini .item{display:flex;align-items:center;gap:8px;margin-bottom:9px;}
+  .plan-mini .item:last-child{margin-bottom:0;}
+  .plan-mini .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .plan-mini .bar{height:9px;border-radius:5px;background:var(--bg2);flex:1;}
+
+  /* 环形图 */
+  .ring{position:relative;width:128px;height:128px;}
+  .ring .label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .ring .label b{font-size:26px;font-weight:700;font-family:Georgia,"Noto Serif SC","Songti SC",serif;}
+  .ring .label span{font-size:11px;color:var(--ink2);}
+
+  /* 理念卡顶部渐变条 */
+  .pillars .card{position:relative;overflow:hidden;}
+  .pillars .card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#2C3E6B,#4A7C59,#C49030,#B8860B,#C04030,#7C5C8A);}
+
   /* 截图展示 */
   .shots{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;max-width:760px;margin:0 auto;}
   .shot-card{text-align:center;}
@@ -74,6 +113,7 @@
     .hero h1{font-size:30px;}
     .shots{grid-template-columns:1fr;}
     .promises{flex-direction:column;gap:8px;}
+    .feat-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -136,12 +176,39 @@
 <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="wrap">
     <h2 class="serif" data-en="What's inside" data-zh="功能一览">What's inside</h2>
-    <ul class="features">
-      <li><strong data-en="The Twelve Hours" data-zh="十二时辰">The Twelve Hours</strong><span data-en=" — meridian-by-meridian guidance for every two-hour window." data-zh=" —— 每个两小时窗口的经络养生指引。"> — meridian-by-meridian guidance for every two-hour window.</span></li>
-      <li><strong data-en="Voice reminders, your way" data-zh="语音提醒，随你定制">Voice reminders, your way</strong><span data-en=" — voice, ring, vibrate or silent, set per hour." data-zh=" —— 语音、响铃、振动或静音，逐时辰设置。"> — voice, ring, vibrate or silent, set per hour.</span></li>
-      <li><strong data-en="Check-ins &amp; dashboard" data-zh="打卡与看板">Check-ins &amp; dashboard</strong><span data-en=" — track your 7 / 14 / 30-day rhythm." data-zh=" —— 追踪 7 / 14 / 30 天节律。"> — track your 7 / 14 / 30-day rhythm.</span></li>
-      <li><strong data-en="Shareable poster" data-zh="分享海报">Shareable poster</strong><span data-en=" — your personalized schedule, in one tap." data-zh=" —— 一键生成个性化作息海报。"> — your personalized schedule, in one tap.</span></li>
-    </ul>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="visual"><div class="dial" aria-hidden="true"></div></div>
+        <h3 data-en="The Twelve Hours" data-zh="十二时辰">The Twelve Hours</h3>
+        <p data-en="Meridian-by-meridian guidance for every two-hour window." data-zh="每个两小时窗口的经络养生指引。">Meridian-by-meridian guidance for every two-hour window.</p>
+      </div>
+      <div class="feat-card">
+        <div class="visual"><div class="voice-mini" aria-hidden="true">
+          <svg class="waves" viewBox="0 0 52 34" fill="none"><path d="M4 17 Q10 7 16 17" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M16 17 Q26 3 36 17" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M36 17 Q42 7 48 17" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <div class="tags"><span class="tag good" data-en="Do" data-zh="宜">Do</span><span class="tag avoid" data-en="Avoid" data-zh="忌">Avoid</span></div>
+        </div></div>
+        <h3 data-en="Voice reminders, your way" data-zh="语音提醒，随你定制">Voice reminders, your way</h3>
+        <p data-en="Voice, ring, vibrate or silent — set per hour." data-zh="语音、响铃、振动或静音，逐时辰设置。">Voice, ring, vibrate or silent — set per hour.</p>
+      </div>
+      <div class="feat-card">
+        <div class="visual"><div class="plan-mini" aria-hidden="true">
+          <div class="head"><span data-en="Today's plan" data-zh="今日计划">Today's plan</span><span class="badge" data-en="Done ✓ 98%" data-zh="已打卡 ✓ 98%">Done ✓ 98%</span></div>
+          <div class="item"><span class="dot"></span><span class="bar"></span></div>
+          <div class="item"><span class="dot"></span><span class="bar"></span></div>
+          <div class="item"><span class="dot"></span><span class="bar"></span></div>
+        </div></div>
+        <h3 data-en="Plan &amp; check in" data-zh="计划与打卡">Plan &amp; check in</h3>
+        <p data-en="A plan per hour, one-tap check-in, auto compliance." data-zh="每时辰定制计划，一键打卡，自动算遵从度。">A plan per hour, one-tap check-in, auto compliance.</p>
+      </div>
+      <div class="feat-card">
+        <div class="visual"><div class="ring" aria-hidden="true">
+          <svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#E8DDD0" stroke-width="13"/><circle cx="60" cy="60" r="50" fill="none" stroke="url(#goldgrad)" stroke-width="13" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="47" transform="rotate(-90 60 60)"/><defs><linearGradient id="goldgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B8860B"/><stop offset="1" stop-color="#DAA520"/></linearGradient></defs></svg>
+          <div class="label"><b>85%</b><span data-en="compliance" data-zh="遵从度">compliance</span></div>
+        </div></div>
+        <h3 data-en="Insight dashboard" data-zh="数据看板">Insight dashboard</h3>
+        <p data-en="Track your 7/14/30-day rhythm, share a poster in one tap." data-zh="追踪 7/14/30 天节律，一键生成分享海报。">Track your 7/14/30-day rhythm, share a poster in one tap.</p>
+      </div>
+    </div>
   </div>
 </section>
 
