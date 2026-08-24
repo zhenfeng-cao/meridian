@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I was so obsessed with building apps I forgot to sleep — Meridian</title>
+<meta name="description" content="A developer's story: burnout, insomnia, surfing, and the 2,000-year-old meridian clock that fixed my schedule — and became the Meridian app.">
+<link rel="canonical" href="https://meridian.stellarsea.com/story.html">
+<link rel="alternate" hreflang="zh" href="https://meridian.stellarsea.com/story.html?lang=zh">
+<style>
+  :root{--bg:#FDF8F0;--bg2:#F7F0E3;--card:#FFFFFF;--ink:#2C2417;--ink2:#6B5E4D;--gold:#B8860B;--gold2:#DAA520;--green:#4A7C59;--border:#E8DDD0;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Noto Sans SC",sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:Georgia,"Noto Serif SC","Songti SC",serif;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+  header{padding:18px 0;border-bottom:1px solid var(--border);}
+  header .row{display:flex;justify-content:space-between;align-items:center;}
+  header a.brand{color:var(--ink);text-decoration:none;font-weight:700;letter-spacing:1px;font-size:18px;}
+  .lang-btn{background:var(--bg2);border:1px solid var(--border);color:var(--ink2);padding:6px 14px;border-radius:999px;font-size:13px;cursor:pointer;}
+  .lang-btn:hover{color:var(--gold);border-color:var(--gold);}
+  main{padding:48px 0 64px;}
+  .kicker{color:var(--gold);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+  h1{font-size:30px;line-height:1.3;margin-bottom:20px;}
+  h2{font-size:20px;margin:32px 0 12px;color:var(--ink);}
+  p{margin-bottom:16px;color:#3a3228;}
+  .lead{font-size:18px;color:var(--ink2);margin-bottom:28px;}
+  blockquote{border-left:3px solid var(--gold);padding:4px 0 4px 20px;margin:24px 0;color:var(--ink2);font-style:italic;}
+  ul{margin:16px 0;padding-left:24px;}
+  li{margin-bottom:10px;color:#3a3228;}
+  strong{color:var(--ink);}
+  .hl{background:linear-gradient(transparent 60%,#ffe8a0 60%);padding:0 2px;}
+  .cta{margin-top:40px;padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;text-align:center;}
+  .cta p{color:var(--ink2);margin-bottom:12px;}
+  .cta a{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;padding:12px 32px;border-radius:12px;font-weight:600;}
+  .cta a:hover{background:var(--gold2);}
+  footer{border-top:1px solid var(--border);padding:28px 0;color:var(--ink2);font-size:13px;}
+  footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  footer a{color:var(--ink2);text-decoration:none;margin-left:16px;}
+  footer a:hover{color:var(--gold);}
+  .zh-body{display:none;}
+  @media(max-width:560px){h1{font-size:24px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap row">
+    <a class="brand serif" href="/">Meridian · 子午</a>
+    <button class="lang-btn" onclick="toggleLang()">中文 / EN</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ===== ENGLISH ===== -->
+  <div id="en-body">
+    <div class="kicker">The story behind Meridian</div>
+    <h1 class="serif">I was so obsessed with building apps I forgot how to sleep — a 2,000-year-old clock fixed it</h1>
+    <p class="lead">Burnout, insomnia, surfing, and the ancient meridian clock that became a habit.</p>
+
+    <p>As a developer, I have a confession: I used to forget time entirely. When I was deep in code, hours vanished. Dinner at midnight. Bed at 3am. I'd look up and realize I'd been sitting for eight hours straight.</p>
+
+    <p>I told myself it was necessary — "just push through, ship it, then rest." I wanted everything: to keep building, to keep surfing, to read the business books I never had time for. So I extended my working hours. And the result wasn't more output. It was <strong>burnout and insomnia</strong>.</p>
+
+    <p>The insomnia was the worst part. I'd lie awake at 3am, wired, unable to sleep. I know I'm not alone — so many people struggle with sleep that they turn to medication, and it still doesn't fix the root cause.</p>
+
+    <h2 class="serif">The insight</h2>
+    <p>Then I started reading the <strong>Huangdi Neijing</strong> (the Yellow Emperor's Classic of Medicine) — an ancient Chinese text most of my friends have never heard of (worth a quick Wikipedia read if you're curious). And I found the <strong>子午流注</strong> — the meridian clock.</p>
+
+    <p>It divides the day into twelve two-hour windows, each tied to a different organ system, each with clear "do / don't" guidance. And it explained, with uncomfortable precision, everything I'd been doing wrong:</p>
+    <ul>
+      <li>Modern office life crams eight hours of intense work into one block, with no regard for when the body actually peaks.</li>
+      <li>People exercise hard at the wrong times — strenuous exertion right when the body needs to rest.</li>
+      <li>Bedtime and wake time are off, so sleep quality quietly collapses.</li>
+    </ul>
+
+    <p>The ancient wisdom is simple: <span class="hl">if you live in tune with your body's natural clock, a lot of health problems resolve themselves</span> — and your work output improves, not despite the balance, but because of it.</p>
+
+    <h2 class="serif">Trying it myself</h2>
+    <p>So I rebuilt my day around the meridian clock:</p>
+    <ul>
+      <li><strong>卯时 (5–7am)</strong> — rise, warm water, gentle Tai Chi / Ba Duan Jin.</li>
+      <li><strong>巳时 (9–11am)</strong> — surf when there are waves, train when there aren't; otherwise, focused coding.</li>
+      <li><strong>未时 (1–3pm)</strong> — my best deep-work window for coding.</li>
+      <li><strong>申时 (3–5pm)</strong> — the second exercise window: surf or strength training.</li>
+      <li><strong>酉时 (5–7pm)</strong> — light dinner, then sit quietly to settle the mind.</li>
+      <li><strong>戌时 (7–9pm)</strong> — read. Finally, the books I never had time for.</li>
+      <li><strong>亥时 (9–11pm)</strong> — wind down for real sleep.</li>
+    </ul>
+
+    <p>It worked. Genuinely. Better sleep, clearer focus, more balanced days — and I still get to code and surf.</p>
+
+    <h2 class="serif">Why Meridian speaks to you</h2>
+    <p>The voice reminders are what make it stick. Meridian doesn't just ping — <strong>it speaks</strong>. At each hour it gently tells you what your body is best at and what to avoid, like a quiet teacher. It's not nagging you to check a box. It repeats the rhythm, hour by hour, until you know it by heart — until you don't need the app anymore.</p>
+
+    <p>So I built <strong>Meridian</strong> — an app that puts this 2,000-year-old clock on your phone. One-time purchase. No subscription, no account, no ads. Everything stays on your device.</p>
+
+    <p>Your body already has a schedule. I just made an app that shows it to you.</p>
+  </div>
+
+  <!-- ===== 中文 ===== -->
+  <div id="zh-body" class="zh-body">
+    <div class="kicker">Meridian 背后的故事</div>
+    <h1 class="serif">痴迷开发到忘了睡觉 —— 一个 2000 年前的时钟治好了我</h1>
+    <p class="lead">过劳、失眠、冲浪，以及那个古老经络时钟如何变成我的习惯。</p>
+
+    <p>作为一个开发者，我必须坦白：我曾经完全忘记时间。沉浸在代码里时，几个小时转瞬即逝。凌晨才吃晚饭，三点才上床。一抬头才发现，自己已经连续坐了八个小时。</p>
+
+    <p>我告诉自己这是必要的——「再撑一下，发布完就休息」。我什么都想要：继续开发、继续冲浪、读那些一直没时间读的商学院书籍。于是我延长了工作时间。结果不是更多产出，而是<strong>过劳和失眠</strong>。</p>
+
+    <p>失眠最折磨人。凌晨三点，我清醒地躺着，大脑高速运转，无法入睡。我知道自己不是一个人——太多人被睡眠困扰，甚至依赖药物，却始终解决不了根本问题。</p>
+
+    <h2 class="serif">那个洞察</h2>
+    <p>后来我开始读<strong>《黄帝内经》</strong>——很多朋友没听过这部古老的经典（感兴趣可以先从维基百科了解）。我在里面找到了<strong>子午流注</strong>——经络时钟。</p>
+
+    <p>它把一天分成十二个时辰，每个时辰对应一个脏腑系统，各有清晰的「宜 / 忌」。它用令人不安的精准，解释了我做错的一切：</p>
+    <ul>
+      <li>现代上班族把八小时高强度工作塞进一个大块，从不考虑身体什么时候才是巅峰。</li>
+      <li>人们在错误的时间剧烈运动——身体需要休息时却在拼命锻炼。</li>
+      <li>起床和入睡的时间不对，睡眠质量悄悄崩塌。</li>
+    </ul>
+
+    <p>古老的智慧很简单：<span class="hl">顺应人体的自然生物钟，很多健康问题会自然解决</span>——工作产出反而更好，不是牺牲平衡，而是因为平衡。</p>
+
+    <h2 class="serif">亲身实践</h2>
+    <p>于是我把自己的一天，重建在经络时钟上：</p>
+    <ul>
+      <li><strong>卯时（5–7点）</strong>——起床、喝温水、练太极/八段锦。</li>
+      <li><strong>巳时（9–11点）</strong>——有浪冲浪、无浪健身；否则专注编程。</li>
+      <li><strong>未时（13–15点）</strong>——我最适合深度编程的时段。</li>
+      <li><strong>申时（15–17点）</strong>——第二个运动窗口：冲浪或力量训练。</li>
+      <li><strong>酉时（17–19点）</strong>——清淡晚餐，然后静坐收神。</li>
+      <li><strong>戌时（19–21点）</strong>——阅读。终于，那些没时间读的书。</li>
+      <li><strong>亥时（21–23点）</strong>——真正放松，准备入睡。</li>
+    </ul>
+
+    <p>真的有效。睡眠更好、专注更清晰、日子更平衡——而我依然能写代码、能冲浪。</p>
+
+    <h2 class="serif">为什么 Meridian 会「开口」</h2>
+    <p>语音提醒是让它真正起作用的钥匙。Meridian 不只是弹通知——<strong>它会开口说话</strong>。每个时辰，它轻声告诉你身体此刻最适合做什么、最好避开什么，像一位温和的老师。它不是强迫你打卡，而是通过反复科普，让你逐渐记住身体自己的节律——直到你不再需要这个 App。</p>
+
+    <p>于是我把这个 2000 年前的时钟，做成了 <strong>Meridian</strong>。一次性买断。无订阅、无账号、无广告。所有数据都留在你的手机上。</p>
+
+    <p>你的身体早已有自己的作息表。我只是做了一个 App，把它呈现给你。</p>
+  </div>
+
+  <div class="cta">
+    <p id="cta-text">Your body already has a schedule. Meridian shows it to you.</p>
+    <a href="/">Meridian 子午</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>© 2026 StellarSea</span>
+    <span><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a><a href="/">Home</a></span>
+  </div>
+</footer>
+
+<script>
+  function toggleLang(){
+    var en=document.getElementById('en-body'), zh=document.getElementById('zh-body');
+    var showZh = zh.style.display!=='block';
+    en.style.display = showZh?'none':'block';
+    zh.style.display = showZh?'block':'none';
+    document.documentElement.lang = showZh?'zh':'en';
+    document.title = showZh ? '痴迷开发到忘了睡觉——Meridian' : 'I was so obsessed with building apps I forgot to sleep — Meridian';
+    document.getElementById('cta-text').textContent = showZh ? '你的身体早已有自己的作息表。Meridian 帮你看见它。' : 'Your body already has a schedule. Meridian shows it to you.';
+    try{ if(history.replaceState){ var u=new URL(location); u.searchParams.set('lang',showZh?'zh':'en'); history.replaceState(null,'',u);} }catch(e){}
+  }
+  (function(){
+    try{ if(new URL(location).searchParams.get('lang')==='zh') toggleLang(); }catch(e){}
+  })();
+</script>
+
+</body>
+</html>
