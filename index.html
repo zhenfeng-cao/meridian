@@ -82,7 +82,7 @@
 <header>
   <div class="wrap row">
     <a class="brand" href="/"><span class="serif">Meridian</span> <span class="sub">子午</span></a>
-    <button class="lang-btn" onclick="setLang(current==='en'?'zh':'en')">中文 / EN</button>
+    <button class="lang-btn" id="lang-btn" onclick="setLang(current==='en'?'zh':'en')">中文</button>
   </div>
 </header>
 
@@ -179,7 +179,7 @@
   <div class="wrap row">
     <span>© 2026 StellarSea</span>
     <span>
-      <a href="/story.html" data-en="Our story" data-zh="我们的故事">Our story</a>
+      <a href="/story.html" data-en="Our story" data-zh="缘起">Our story</a>
       <a href="/privacy.html" data-en="Privacy" data-zh="隐私政策">Privacy</a>
       <a href="/terms.html" data-en="Terms" data-zh="使用条款">Terms</a>
       <a href="/support.html" data-en="Support" data-zh="帮助支持">Support</a>
@@ -202,9 +202,11 @@
       if(src) img.src = src;
     });
     document.title = lang==='zh' ? 'Meridian 子午 — 顺应天时的作息养生' : 'Meridian 子午 — Live in tune with your body\'s natural rhythm';
+    try{ localStorage.setItem('lang', lang); }catch(e){}
+    var btn=document.getElementById('lang-btn'); if(btn) btn.textContent = lang==='zh' ? 'English' : '中文';
     try{ var u=new URL(location); u.searchParams.set('lang',lang); history.replaceState(null,'',u); }catch(e){}
   }
-  (function(){ try{ if(new URL(location).searchParams.get('lang')==='zh') setLang('zh'); }catch(e){} })();
+  (function(){ try{ var p=new URL(location).searchParams.get('lang'); var s=null; try{s=localStorage.getItem('lang');}catch(e){} if(p==='zh'||(p===null&&(s==='zh'||(navigator.language||'').toLowerCase().indexOf('zh')===0))) setLang('zh'); }catch(e){} })();
 </script>
 
 </body>
