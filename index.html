@@ -6,7 +6,23 @@
 <title>Meridian 子午 — Live in tune with your body's natural rhythm</title>
 <meta name="description" content="Meridian is the 2,000-year-old circadian clock from the Huangdi Neijing — your body's built-in daily schedule, on your phone. Voice reminders, no account, no cloud, no subscription.">
 <link rel="canonical" href="https://meridian.stellarsea.com/">
+<link rel="alternate" hreflang="en" href="https://meridian.stellarsea.com/">
 <link rel="alternate" hreflang="zh" href="https://meridian.stellarsea.com/?lang=zh">
+<link rel="icon" href="/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/icon.png">
+<meta name="theme-color" content="#FDF8F0">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Meridian 子午">
+<meta property="og:title" content="Meridian 子午 — Live in tune with your body's natural rhythm">
+<meta property="og:description" content="The 2,000-year-old circadian clock from the Huangdi Neijing — your body's built-in daily schedule, on your phone. No account, no cloud, no subscription.">
+<meta property="og:url" content="https://meridian.stellarsea.com/">
+<meta property="og:image" content="https://meridian.stellarsea.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meridian 子午 — Live in tune with your body's natural rhythm">
+<meta name="twitter:description" content="The 2,000-year-old circadian clock from the Huangdi Neijing, on your phone. No account, no cloud, no subscription.">
+<meta name="twitter:image" content="https://meridian.stellarsea.com/og.png">
 <style>
   :root{--bg:#FDF8F0;--bg2:#F7F0E3;--card:#FFFFFF;--ink:#2C2417;--ink2:#6B5E4D;--gold:#B8860B;--gold2:#DAA520;--green:#4A7C59;--border:#E8DDD0;}
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -29,6 +45,7 @@
   .hero .lead{font-size:18px;color:var(--ink2);max-width:580px;margin:0 auto 28px;}
   .cta{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;padding:14px 36px;border-radius:12px;font-weight:600;font-size:16px;letter-spacing:.3px;}
   .cta:hover{background:var(--gold2);}
+  .cta-static{cursor:default;}
   .cta-note{font-size:13px;color:var(--ink2);margin-top:12px;}
   .band{display:flex;gap:3px;margin:36px auto 0;max-width:560px;height:10px;border-radius:6px;overflow:hidden;}
   .band span{flex:1;display:block;}
@@ -92,11 +109,14 @@
   .pillars .card{position:relative;overflow:hidden;}
   .pillars .card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#2C3E6B,#4A7C59,#C49030,#B8860B,#C04030,#7C5C8A);}
 
-  /* 截图展示 */
-  .shots{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;max-width:760px;margin:0 auto;}
-  .shot-card{text-align:center;}
-  .shot-card img{width:100%;max-width:300px;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.12);border:1px solid var(--border);}
-  .shot-card p{margin-top:14px;color:var(--ink2);font-size:14px;}
+  /* 截图画廊（App Store 式横向滑动，纯 CSS） */
+  .gallery{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:14px;}
+  .gallery-track{display:flex;gap:22px;width:max-content;padding-left:max(24px,calc((100% - 820px) / 2 + 24px));padding-right:max(24px,calc((100% - 820px) / 2 + 24px));}
+  .gallery img{flex:0 0 auto;width:300px;height:auto;display:block;scroll-snap-align:center;border-radius:22px;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.10);background:var(--card);}
+  .gallery::-webkit-scrollbar{height:8px;}
+  .gallery::-webkit-scrollbar-track{background:transparent;}
+  .gallery::-webkit-scrollbar-thumb{background:#E0D3C0;border-radius:99px;}
+  .gallery-hint{text-align:center;color:var(--ink2);font-size:13px;margin-top:6px;}
 
   .pricing{text-align:center;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
   .price{font-size:48px;font-weight:700;line-height:1;margin:8px 0;}
@@ -111,9 +131,9 @@
 
   @media(max-width:640px){
     .hero h1{font-size:30px;}
-    .shots{grid-template-columns:1fr;}
     .promises{flex-direction:column;gap:8px;}
     .feat-grid{grid-template-columns:1fr;}
+    .gallery img{width:268px;}
   }
 </style>
 </head>
@@ -131,7 +151,7 @@
     <span class="badge" data-en="One-time purchase · No subscription" data-zh="一次性买断 · 无订阅">One-time purchase · No subscription</span>
     <h1 class="serif" data-en="Live in tune with your body's natural rhythm." data-zh="顺应天时的作息养生">Live in tune with your body's natural rhythm.</h1>
     <p class="lead" data-en="Meridian is the 2,000-year-old circadian clock from the Huangdi Neijing — your body's built-in daily schedule, on your phone." data-zh="Meridian 是源自《黄帝内经》的 2000 年昼夜节律系统——你身体自带的作息表，装进手机。">Meridian is the 2,000-year-old circadian clock from the Huangdi Neijing — your body's built-in daily schedule, on your phone.</p>
-    <a class="cta" href="#" data-en="Coming to the App Store" data-zh="即将上架 App Store">Coming to the App Store</a>
+    <span class="cta cta-static" data-en="Coming to the App Store" data-zh="即将上架 App Store">Coming to the App Store</span>
     <p class="cta-note" data-en="No account · No cloud · No ads · Your data never leaves your phone" data-zh="无账号 · 无云端 · 无广告 · 数据不出手机">No account · No cloud · No ads · Your data never leaves your phone</p>
     <div class="band" aria-hidden="true">
       <span style="background:#2C3E6B"></span><span style="background:#3A2C5E"></span><span style="background:#2A4A5E"></span>
@@ -215,17 +235,31 @@
 <section>
   <div class="wrap">
     <h2 class="serif" data-en="See it in action" data-zh="眼见为实">See it in action</h2>
-    <div class="shots">
-      <div class="shot-card">
-        <img class="shot" data-en-src="home_en.png" data-zh-src="home_zh.png" src="home_en.png" alt="Meridian home screen">
-        <p data-en="Your current hour — good-for &amp; avoid, at a glance." data-zh="当前时辰——宜忌一目了然。">Your current hour — good-for &amp; avoid, at a glance.</p>
-      </div>
-      <div class="shot-card">
-        <img class="shot" data-en-src="poster_en.png" data-zh-src="poster_zh.png" src="poster_en.png" alt="Meridian schedule poster">
-        <p data-en="Your whole day, planned across twelve hours." data-zh="一整天，十二时辰安排妥当。">Your whole day, planned across twelve hours.</p>
-      </div>
+    <p class="lede" style="margin-bottom:28px;" data-en="Six screens — the whole rhythm, from this hour to your 30-day trend." data-zh="六屏看完整套节律：从此刻的时辰，到 30 天的趋势。">Six screens — the whole rhythm, from this hour to your 30-day trend.</p>
+  </div>
+  <div class="gallery" role="region" tabindex="0" aria-label="Meridian app screenshots">
+    <div class="gallery-track">
+      <img class="shot" width="600" height="1304" loading="lazy" decoding="async"
+           data-en-src="shots/en/01-home.webp" data-zh-src="shots/zh/01-home.webp" src="shots/en/01-home.webp"
+           data-en-alt="Home screen: live in tune with your body's natural rhythm" data-zh-alt="首页：顺应身体的天然节律" alt="Home screen: live in tune with your body's natural rhythm">
+      <img class="shot" width="600" height="1304" loading="lazy" decoding="async"
+           data-en-src="shots/en/02-twelve-hours.webp" data-zh-src="shots/zh/02-twelve-hours.webp" src="shots/en/02-twelve-hours.webp"
+           data-en-alt="The Twelve Hours: twelve two-hour windows, one for each organ system" data-zh-alt="十二时辰：各有所主" alt="The Twelve Hours: twelve two-hour windows, one for each organ system">
+      <img class="shot" width="600" height="1304" loading="lazy" decoding="async"
+           data-en-src="shots/en/03-shichen-detail.webp" data-zh-src="shots/zh/03-shichen-detail.webp" src="shots/en/03-shichen-detail.webp"
+           data-en-alt="Hour detail: know what your body is best at right now" data-zh-alt="时辰详情：此刻身体最适合做什么" alt="Hour detail: know what your body is best at right now">
+      <img class="shot" width="600" height="1304" loading="lazy" decoding="async"
+           data-en-src="shots/en/04-dashboard.webp" data-zh-src="shots/zh/04-dashboard.webp" src="shots/en/04-dashboard.webp"
+           data-en-alt="Dashboard: watch your rhythm build over 7, 14 and 30 days" data-zh-alt="数据看板：7 / 14 / 30 天节律追踪" alt="Dashboard: watch your rhythm build over 7, 14 and 30 days">
+      <img class="shot" width="600" height="1304" loading="lazy" decoding="async"
+           data-en-src="shots/en/05-reminder-modes.webp" data-zh-src="shots/zh/05-reminder-modes.webp" src="shots/en/05-reminder-modes.webp"
+           data-en-alt="Reminder modes: voice, chime or silent, chosen for each hour" data-zh-alt="提醒方式：语音、响铃或静默，每个时辰独立设置" alt="Reminder modes: voice, chime or silent, chosen for each hour">
+      <img class="shot" width="600" height="1304" loading="lazy" decoding="async"
+           data-en-src="shots/en/06-poster.webp" data-zh-src="shots/zh/06-poster.webp" src="shots/en/06-poster.webp"
+           data-en-alt="Schedule poster: share your personal daily schedule" data-zh-alt="作息海报：分享你的个人作息表" alt="Schedule poster: share your personal daily schedule">
     </div>
   </div>
+  <p class="gallery-hint" data-en="Swipe or scroll sideways to see all six →" data-zh="左右滑动查看全部六屏 →">Swipe or scroll sideways to see all six →</p>
 </section>
 
 <section class="pricing">
@@ -267,6 +301,8 @@
     document.querySelectorAll('.shot').forEach(function(img){
       var src = img.getAttribute(lang==='en'?'data-en-src':'data-zh-src');
       if(src) img.src = src;
+      var alt = img.getAttribute(lang==='en'?'data-en-alt':'data-zh-alt');
+      if(alt) img.alt = alt;
     });
     document.title = lang==='zh' ? 'Meridian 子午 — 顺应天时的作息养生' : 'Meridian 子午 — Live in tune with your body\'s natural rhythm';
     try{ localStorage.setItem('lang', lang); }catch(e){}
