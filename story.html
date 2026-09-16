@@ -161,7 +161,7 @@
 
   <div class="cta">
     <p id="cta-text">Your body already has a schedule. Meridian shows it to you.</p>
-    <a id="cta-link" href="https://apps.apple.com/us/app/meridian-circadian-body-clock/id6805501938" target="_blank" rel="noopener" data-en-href="https://apps.apple.com/us/app/meridian-circadian-body-clock/id6805501938" data-zh-href="https://apps.apple.com/cn/app/meridian-circadian-body-clock/id6805501938">Download on the App Store</a>
+    <a id="cta-link" href="https://apps.apple.com/us/app/meridian-circadian-body-clock/id6805501938" target="_blank" rel="noopener">Download on the App Store</a>
   </div>
 </main>
 
@@ -173,6 +173,17 @@
 </footer>
 
 <script>
+  var STORE_CN = 'https://apps.apple.com/cn/app/meridian-circadian-body-clock/id6805501938';
+  var STORE_US = 'https://apps.apple.com/us/app/meridian-circadian-body-clock/id6805501938';
+  var CN_TZ = ['Asia/Shanghai','Asia/Chongqing','Asia/Harbin','Asia/Urumqi','Asia/Kashgar'];
+  function storeRegion(){
+    var tz=''; try{ tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; }catch(e){}
+    return CN_TZ.indexOf(tz)>=0 ? 'cn' : 'us';
+  }
+  function applyStoreLink(){
+    var el = document.getElementById('cta-link');
+    if(el){ el.href = (storeRegion()==='cn') ? STORE_CN : STORE_US; }
+  }
   function toggleLang(){
     var en=document.getElementById('en-body'), zh=document.getElementById('zh-body');
     var showZh = zh.style.display!=='block';
@@ -181,7 +192,7 @@
     document.documentElement.lang = showZh?'zh':'en';
     document.title = showZh ? '痴迷开发到忘了睡觉——Meridian' : 'I was so obsessed with building apps I forgot to sleep — Meridian';
     document.getElementById('cta-text').textContent = showZh ? '你的身体早已有自己的作息表。Meridian 帮你看见它。' : 'Your body already has a schedule. Meridian shows it to you.';
-    var ctaLink=document.getElementById('cta-link'); if(ctaLink){ ctaLink.textContent = showZh ? '前往 App Store 下载' : 'Download on the App Store'; var _h=ctaLink.getAttribute(showZh?'data-zh-href':'data-en-href'); if(_h) ctaLink.href=_h; }
+    var ctaLink=document.getElementById('cta-link'); if(ctaLink) ctaLink.textContent = showZh ? '前往 App Store 下载' : 'Download on the App Store';
     try{ localStorage.setItem('lang', showZh?'zh':'en'); }catch(e){}
     var btn=document.getElementById('lang-btn'); if(btn) btn.textContent = showZh ? 'English' : '中文';
     try{ if(history.replaceState){ var u=new URL(location); u.searchParams.set('lang',showZh?'zh':'en'); history.replaceState(null,'',u);} }catch(e){}
@@ -193,6 +204,7 @@
       if(p==='zh'||(p===null&&(s==='zh'||(navigator.language||'').toLowerCase().indexOf('zh')===0))) toggleLang();
     }catch(e){}
   })();
+  applyStoreLink();
 </script>
 
 </body>
