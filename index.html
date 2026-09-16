@@ -320,7 +320,7 @@
     var btn=document.getElementById('lang-btn'); if(btn) btn.textContent = lang==='zh' ? 'English' : '中文';
     try{ var u=new URL(location); u.searchParams.set('lang',lang); history.replaceState(null,'',u); }catch(e){}
   }
-  (function(){ try{ var p=new URL(location).searchParams.get('lang'); var s=null; try{s=localStorage.getItem('lang');}catch(e){} if(p==='zh'||(p===null&&(s==='zh'||(navigator.language||'').toLowerCase().indexOf('zh')===0))) setLang('zh'); }catch(e){} })();
+  (function(){ try{ var p=new URL(location).searchParams.get('lang'); var s=null; try{s=localStorage.getItem('lang');}catch(e){} var lang=p||s||(storeRegion()==='cn'?'zh':'en'); if(lang==='zh') setLang('zh'); }catch(e){} })();
   applyStoreLink();
 </script>
 
